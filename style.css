@@ -1,0 +1,498 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    scroll-behavior: smooth;
+}
+
+:root{
+    --cly: #f7e025;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--cly); 
+    border-radius: 5px;
+}
+
+::selection{
+    color: #fff;
+    background-color: var(--cly);
+}
+
+body{
+    background-color: #120e16;
+}
+
+.loadbar{
+    position: fixed;
+    z-index: 10;
+    width: calc(100%);
+    height: 4px;
+}
+
+.loadbar > span{
+    display: block;
+    width: 0%;
+    height: 100%;
+    background-color: #ffffff;
+    border-radius: 0 2px 2px 0;
+}
+
+.boxmenu{
+    position: fixed;
+    top: 0;
+    z-index: 2;
+    padding: 0 50px;
+    width: 100%;
+    height: 80px;
+    background-image: linear-gradient(360deg,#120e1610,#120e16d1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* icon to top */
+
+.boxmenu .box-left{
+    position: relative;
+    cursor: pointer;
+    z-index: 2;
+    color: #fff;
+    font-size: 50px;
+}
+
+/* hamberger menu */
+
+.boxmenu .box-right{
+    position: relative;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    transition: transform .5s;
+}
+
+.boxmenu .box-right > div{
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.boxmenu .box-right > div > span{
+    display: block;
+    height: 2px;
+    background-color: #fff;
+    transform-origin: center;
+    transition: transform .5s;
+}
+
+.addcloserotate{
+    transform: rotate(-360deg);
+}
+
+.addclose1{
+    transform: translate(0px,10px) rotate(45deg);
+}
+
+.addclose2{
+    transform: rotate(-45deg);
+}
+
+.addclose3{
+    transform: translate(0px,-10px) rotate(-45deg);
+}
+
+.addmouseenterrotate{
+    transform: rotate(-270deg);
+}
+
+/* menushow */
+
+.menu{
+    position: fixed;
+    z-index: -1;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    transform: scale(0,0);
+    display: grid;
+    place-items: center;
+}
+
+.menu > ul{
+    position: relative;
+    z-index: 5; 
+    transform: scale(0,0);
+    transition-property: transform;
+    transition-duration: .2s;
+}
+
+.menu > ul > li >a{
+    display: block;
+    background-image: linear-gradient(90deg,#fff 50%,#f7e025 50%);
+    width: 100%;
+    background-size: 200%;
+    text-align: center;
+    text-decoration: none;
+    font-size: 50px;
+    font-weight: bold;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    transition: all .5s;
+}
+
+.menu .menubg{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(0,0);
+    display: block;
+    border-radius: 100%;
+    width: calc(100vw + 600px);
+    height: calc(100vw + 600px);
+    background-color: #000000c3;
+    transition: transform .2s;
+}
+
+.addscalemenu{
+    transform: scale(1,1);
+}
+
+.addmenubg{
+    transform: translate(-50%,-50%) scale(1,1) !important;
+}
+
+.addtextmenu{
+    transform: scale(1,1) !important;
+}
+
+/* style main */
+
+main{
+    position: relative;
+    padding: 0 50px;
+    z-index: 1;
+    transition-property: z-index;
+}
+
+/* style sec1 */
+
+.sec1{
+    padding-top: 80px;
+    height: 100vh;
+    display: flex;
+}
+
+.sec1 .boxleft{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.sec1 .boxleft .boxtext{
+    line-height: 60px;
+}
+
+.sec1 .boxleft .boxtext > p{
+    color: #f7e025;
+    font-size: 25px;
+}
+
+.sec1 .boxleft .boxtext > h1{
+    position: relative;
+    display: inline-block;
+    color: #fff;
+    font-size: 85px;
+}
+
+.sec1 .boxleft .boxtext > h1::before{
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    bottom: -8px;
+    width: 100%;
+    height: 5px;
+    border-radius: 2px;
+    background-color: #f7e025;
+    box-shadow: 0 -5px 5px #f7df254d;
+}
+
+.sec1 .boxleft .boxtext > h2{
+    margin-top: 30px;
+    font-weight: 100;
+    height: 60px;
+    font-size: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.sec1 .boxleft .boxtext .writetext{
+    display: inline-block;
+    letter-spacing: 2px;
+    color: #a7a7a7;
+}
+
+.sec1 .boxleft .boxtext > h2 > span:nth-of-type(2){
+    display: inline-block;
+    width: 4px;
+    height: 40px;
+    background-color: #fff;
+    margin-left: 3px;
+}
+
+.sec1 .boxleft .boxicon{
+    color: #fff;
+    margin-top: 40px;
+    font-size: 35px;
+    display: flex;
+    column-gap: 30px;
+}
+
+.sec1 .boxleft .boxicon > i{
+    transition: color .5s;
+}
+
+.sec1 .boxleft .boxicon > i:hover{
+    color: #f7e025;
+}
+
+.sec1 .boxleft .boxlink{
+    margin-top: 30px;
+}
+
+.sec1 .boxleft .boxlink > a{
+    display: inline-block;
+    color: #fff;
+    text-decoration: none;
+    border: 2px solid #f7e025;
+    padding: 0.7rem 2.4rem;
+    border-radius: 10px;
+    font-weight: 800;
+    background-image: linear-gradient(120deg,transparent,transparent 50%,#f7e025 0);
+    background-size: 300% 300%;
+    background-repeat: no-repeat;
+    transition: background-position .5s;
+}
+
+.sec1 .boxleft .boxlink > a:hover{
+    background-position: -300px 0;
+}
+
+.sec1 .boxright{
+    width: 50%;
+}
+
+.addfadeprompt{
+    animation: fade .8s infinite;
+}
+
+@keyframes fade {
+    0%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+/* style sec2 */
+
+.sec2{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.sec2 .boxtext > h1{
+    color: #413e45;
+    text-align: center;
+    font-size: 62px;
+}
+
+.sec2 .boxtext > h1 > span{
+    line-height: 7rem;
+}
+
+/* style sec3 */
+
+.sec3{
+    color: #fff;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.sec3 .boxtext > p{
+    font-size: 20px;
+    letter-spacing: 4px;
+    opacity: 0;
+}
+
+.sec3 .boxtext > h1{
+    margin-top: 5px;
+    font-size: 60px;
+    color: var(--cly);
+    opacity: 0;
+}
+.sec3 .boxtext > h2{
+    margin-top: 20px;
+    font-size: 30px;
+    line-height: 3rem;
+}
+
+.sec3 .boxtools{
+    margin-top: 50px;
+    text-transform: uppercase;
+    font-size: 20px;
+    letter-spacing: 3px;
+}
+
+.sec3 .boxtools > div{
+    margin: 30px 0;
+    display: flex;
+    align-items: center;
+}
+
+.sec3 .boxtools > div > img{
+    width: 55px;
+    height: 55px;
+    margin-right: 25px;
+}
+
+.sec3 .boxlbfw{
+    text-transform: uppercase;
+    font-size: 20px;
+    letter-spacing: 3px;
+}
+
+.sec3 .boxlbfw > div{
+    margin: 30px 0;
+    display: flex;
+    align-items: center;
+}
+
+.sec3 .boxlbfw > div > img{
+    width: 55px;
+    height: 55px;
+    margin-right: 25px;
+}
+
+.sec3 .boxdb{
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 30px;
+}
+
+.sec3 .boxdb > div{
+    text-transform: uppercase;
+    font-size: 20px;
+    letter-spacing: 3px;
+}
+
+.sec3 .boxdb > div > div{
+    margin: 30px 0;
+    display: flex;
+    align-items: center;
+}
+
+.sec3 .boxdb > div > div >  img{
+    width: 55px;
+    height: 55px;
+    margin-right: 25px;
+}
+
+/* responsive main */
+
+@media screen and (max-width: 525px) {
+    main{
+        padding: 0 10px;
+    }
+}
+
+/* responsive sec1 */
+
+@media screen and (max-width: 1022px) {
+    .sec1 .boxleft{
+        width: 100%;
+    }
+    .sec1 .boxright{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .sec1 .boxleft .boxtext > h1{
+        font-size: 60px;
+    }
+
+    .sec1 .boxleft .boxtext .writetext{
+        font-size: 38px;
+    }
+}
+
+/* responsive sec2 */
+
+@media screen and (max-width: 1005px) {
+    .sec2 .boxtext > h1{
+        font-size: 50px;
+    }
+}
+
+@media screen and (max-width: 835px) {
+    .sec2 .boxtext > h1{
+        font-size: 40px;
+    }
+
+    .sec2 .boxtext > h1 > span{
+        line-height: 5rem;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .sec2 .boxtext > h1{
+        font-size: 30px;
+    }
+
+    .sec2 .boxtext > h1 > span{
+        line-height: 4rem;
+    }
+}
+
+@media screen and (max-width: 415px) {
+    .sec2 .boxtext > h1{
+        font-size: 30px;
+    }
+
+    .sec2 .boxtext > h1 > span{
+        line-height: 3rem;
+    }
+}
+
+/* responsive sec3 */
+
+@media screen and (max-width: 617px) {
+    .sec3 > div{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .sec3 p{
+        text-align: center;
+    }
+}

@@ -473,7 +473,6 @@ main{
     display: flex;
     gap: 20px;
     border: 1px solid yellow;
-    overflow: hidden;
 }
 
 .sec4 .container .boxright .item{

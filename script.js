@@ -137,15 +137,29 @@ window.addEventListener("scroll",() => {
     }
 });
 
+//gsap animation
 document.addEventListener("DOMContentLoaded", (event) => {
     gsap.registerPlugin(ScrollTrigger,ScrollSmoother,ScrambleTextPlugin);
 
+    //cursor animantion
+    gsap.set(".cursor", {xPercent: -50, yPercent: -50});
+
+    let xTo = gsap.quickTo(".cursor", "x", {duration: 0.6, ease: "power3"}),
+        yTo = gsap.quickTo(".cursor", "y", {duration: 0.6, ease: "power3"});
+
+    window.addEventListener("mousemove", e => {
+      xTo(e.clientX);
+      yTo(e.clientY);
+    });
+
+    //smooth scroll
     let smoother = ScrollSmoother.create({
         wrapper:smoothwrapper,
         content:smoothcontent,
         smooth:1
     });
 
+    //scrambleText phuwadon
     gsap.to(title,{
         duration: 4,
         scrambleText: "Phuwadon"
@@ -203,8 +217,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
             }
         }
     });
-
-    console.log();
 
     //scroll projecs
     gsap.to(sec4,{

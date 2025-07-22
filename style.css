@@ -478,7 +478,7 @@ main{
 
 .sec4 .container .boxright .item{
     flex-shrink: 0;
-    border: 1px solid red;
+    background-color: red;
     width: 350px;
     height: 450px;
 }

@@ -1,9 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitcount+Grid+Single:wght@100..900&display=swap');
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
     scroll-behavior: smooth;
+    font-family: "Bitcount Grid Single", system-ui;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+      "slnt" 0,
+      "CRSV" 0.5,
+      "ELSH" 0,
+      "ELXP" 0;
 }
 
 :root{
@@ -16,7 +26,6 @@
 
 ::-webkit-scrollbar-thumb {
     background: var(--cly); 
-    border-radius: 5px;
 }
 
 ::selection{
@@ -26,11 +35,14 @@
 
 body{
     background-color: #120e16;
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
 }
 
 .loadbar{
     position: fixed;
-    z-index: 10;
+    z-index: 100;
     width: calc(100%);
     height: 4px;
 }
@@ -45,8 +57,7 @@ body{
 
 .boxmenu{
     position: fixed;
-    top: 0;
-    z-index: 2;
+    z-index: 5;
     padding: 0 50px;
     width: 100%;
     height: 80px;
@@ -178,10 +189,13 @@ body{
 /* style main */
 
 main{
+    flex-grow: 1;
     position: relative;
     padding: 0 50px;
     z-index: 1;
     transition-property: z-index;
+    height: 500px;
+    
 }
 
 /* style sec1 */
@@ -291,6 +305,8 @@ main{
 
 .sec1 .boxright{
     width: 50%;
+    display: grid;
+    place-items: center;
 }
 
 .addfadeprompt{
@@ -324,7 +340,7 @@ main{
 }
 
 .sec2 .boxtext > h1 > span{
-    line-height: 7rem;
+    line-height: 5rem;
 }
 
 /* style sec3 */
@@ -340,14 +356,11 @@ main{
 .sec3 .boxtext > p{
     font-size: 20px;
     letter-spacing: 4px;
-    opacity: 0;
 }
 
 .sec3 .boxtext > h1{
     margin-top: 5px;
     font-size: 60px;
-    color: var(--cly);
-    opacity: 0;
 }
 .sec3 .boxtext > h2{
     margin-top: 20px;
@@ -416,6 +429,122 @@ main{
     margin-right: 25px;
 }
 
+.sec4{
+    padding: 50px 0;
+    color: #fff;
+}
+
+.sec4 > h1{
+    margin-top: 50px;
+    font-size: 60px;
+}
+
+.sec4 .container{
+    margin-top: 20px;
+    display: flex;
+}
+
+.sec4 .container .boxleft{
+    width: 40%;
+}
+
+.sec4 .container .boxright{
+    position: relative;
+    width: 60%;
+    display: flex;
+    gap: 20px;
+}
+
+.sec4 .container .boxright .item{
+    flex-shrink: 0;
+    border: 1px solid red;
+    width: 350px;
+    height: 450px;
+    margin-bottom: 20px;
+}
+
+.sec5{
+    height: 100dvh;
+    padding: 50px 0;
+    color: #fff;
+}
+
+
+/* style cube */
+
+.containercube {
+    position: relative;
+    z-index: -1;
+    width: 200px;
+    height: 200px;
+    perspective: 500px;
+    margin: 100px;
+}
+
+.cube {
+  position: relative;
+  z-index: -1;
+  width: 200px;
+  height: 200px;
+  transform-style: preserve-3d;
+  animation: turn 10s linear infinite;
+}
+
+.cube > div > img{
+    width: 100%;
+    height: 100%;
+    filter: grayscale(100%);
+    object-fit: cover;
+}
+
+.face {
+  width: 200px;
+  height: 200px;
+  border: 1px solid black;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, sans-serif;
+  font-size: 2rem;
+}
+
+.front {
+  transform: translateZ(100px);
+}
+
+.back {
+  transform: translateZ(-100px) rotateY(180deg);
+}
+
+.left {
+  transform: translateX(-100px) rotateY(-90deg);
+}
+
+.right {
+  transform: translateX(100px) rotateY(90deg);
+}
+
+.top {
+  transform: translateY(-100px) rotateX(90deg);
+}
+
+.bottom {
+  transform: translateY(100px) rotateX(-90deg);
+}
+
+@keyframes turn {
+  from { transform: rotate3d(0, 0, 0, 0); }
+  to { transform: rotate3d(1, 1, 0, 360deg); }
+}
+
+/* @media (prefers-reduced-motion: reduce) {
+  .cube {
+    animation: none;
+    transform: rotate3d(1, 1, 0, 45deg);
+  }
+} */
+
 /* responsive main */
 
 @media screen and (max-width: 525px) {
@@ -460,6 +589,10 @@ main{
 
     .sec2 .boxtext > h1 > span{
         line-height: 5rem;
+    }
+
+    .sec3{
+        height: auto;
     }
 }
 

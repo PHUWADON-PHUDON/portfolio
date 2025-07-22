@@ -1,3 +1,8 @@
+const title = document.querySelector(".title");
+const myskills = document.querySelector(".myskills");
+const myprojects = document.querySelector(".myprojects");
+const smoothwrapper = document.getElementById("smooth-wrapper");
+const smoothcontent = document.getElementById("smooth-content");
 const main = document.querySelector("main");
 const boxtotop = document.querySelector(".boxmenu .box-left");
 const boxmenu = document.querySelector(".boxmenu");
@@ -12,6 +17,11 @@ const writetext = document.querySelector(".writetext");
 const prompt = document.querySelector(".sec1 .boxleft .boxtext > h2 > span:nth-of-type(2)");
 const textcolorsec2 = document.querySelectorAll(".sec2 .boxtext > h1 > span");
 const loadbar = document.querySelector(".loadbar > span");
+const sec4 = document.querySelector(".sec4");
+const boxproject = document.querySelector(".boxproject");
+const cube = document.querySelector(".containercube");
+const containersec4 = document.querySelector(".sec4 .container");
+const itemsec4 = document.querySelectorAll(".sec4 .boxright .item");
 
 let checkrotatemenu = 0;
 
@@ -21,14 +31,14 @@ clickmenu.addEventListener("click",() => {
         checkrotatemenu = 1;
         boxtotop.style = "z-index: -1;";
         menuul.style = "transition-delay: .4s;";
-        main.style = "z-index: -1; transition-delay: 0s;";
+        main.style = "inset: 0px; width: 100%; height: 100%; position: fixed; overflow: hidden; z-index: -1; transition-delay: 0s;";
         menu.style = "transition: transform 0s";
     }
     else if (checkrotatemenu == 1) {
         checkrotatemenu = 0;
         boxtotop.style = "z-index: 2;";
         menuul.style = "transition-delay: 0s;";
-        main.style = "z-index: 1; transition-delay: .5s;";
+        main.style = "inset: 0px; width: 100%; height: 100%; position: fixed; overflow: hidden; z-index: 1; transition-delay: .5s;";
         menu.style = "transition: transform 1s";
         clickmenu.classList.remove("addmouseenterrotate");
     }
@@ -55,10 +65,10 @@ clickmenu.addEventListener("mouseleave",() => {
 
 for (let i = 0 ; i < menulist.length ; i++) {
     menulist[i].addEventListener("mouseenter",() => {
-        menulist[i].style = "background-position: -200px 0;";
+        menulist[i].style = "background-position: -240px 0;";
     });
     menulist[i].addEventListener("mouseleave",() => {
-        menulist[i].style = "background-position: -400px 0;";
+        menulist[i].style = "background-position: -480px 0;";
         setTimeout(() => {
             menulist[i].style = "transition: none; background-position: 0px 0;";
         },230);
@@ -71,7 +81,7 @@ clickup.addEventListener("click",() => {
 });
 
 //script write text
-let textarr = ["Plug phuwadon","suwannarat"];
+let textarr = ["Frontend","Backend"];
 let counttextarr = 0;
 let couttext = 0;
 let checktext = 0;
@@ -111,7 +121,7 @@ function fnwritetext() {
 }
 
 window.addEventListener("scroll",() => {
-    //script scroll heightlight
+    //script scroll heightlight text
     if (window.scrollY >= (window.innerHeight - 300) && window.scrollY <= window.innerHeight) {
         textcolorsec2[0].style = "color: #fff;";
     }
@@ -125,12 +135,97 @@ window.addEventListener("scroll",() => {
     else{
         textcolorsec2[1].style = "color: unset;";
     }
+});
+
+document.addEventListener("DOMContentLoaded", (event) => {
+    gsap.registerPlugin(ScrollTrigger,ScrollSmoother,ScrambleTextPlugin);
+
+    let smoother = ScrollSmoother.create({
+        wrapper:smoothwrapper,
+        content:smoothcontent,
+        smooth:1
+    });
+
+    gsap.to(title,{
+        duration: 4,
+        scrambleText: "Phuwadon"
+    });
 
     //script loadbar
-    loadbar.style = `width: ${(window.scrollY / (document.body.scrollHeight - 1000)) * 100}%;`;
+    gsap.ticker.add(() => {
+        const scrollY = smoother.scrollTop();
+        const contentHeight = smoother.content().scrollHeight;
+        const viewportHeight = window.innerHeight;
+        const maxScroll = contentHeight - viewportHeight;
+        const progress = (scrollY / maxScroll) * 100;
+        
+        loadbar.style = `width: ${progress}%;`;
+    });
 
-    //script sec3
-    if (window.scrollY >= (window.innerHeight * 2 - 700)) {
-        console.log("fuck")
-    }
+    //rotation cube
+    gsap.to(cube,{
+        scrollTrigger:{
+            trigger:cube,
+            start:"top center",
+            scrub:true,
+        },
+        rotation:360
+    });
+
+    //scrambleText my skills
+    gsap.to(myskills,{
+        scrollTrigger:{
+            trigger:myskills,
+            start:"top bottom",
+            onEnter: () => {
+                gsap.to(myskills, {
+                  scrambleText: {
+                    text: "My Skills"
+                  },
+                  duration: 2
+                });
+            }
+        }
+    });
+
+    //scrambleText my projects
+    gsap.to(myprojects,{
+        scrollTrigger:{
+            trigger:myprojects,
+            start:"top bottom",
+            onEnter: () => {
+                gsap.to(myprojects, {
+                  scrambleText: {
+                    text: "My Projects"
+                  },
+                  duration: 2
+                });
+            }
+        }
+    });
+
+    console.log();
+
+    //scroll projecs
+    gsap.to(sec4,{
+        scrollTrigger:{
+            trigger:sec4,
+            start:"top top",
+            end:() => `+=${(itemsec4.length - 2) * 350}`,
+            markers:true,
+            pin:true,
+            onEnter:() => {
+                gsap.to(containersec4,{
+                    scrollTrigger:{
+                        trigger:containersec4,
+                        start:"top top",
+                        end:() => `+=${(itemsec4.length - 2) * 350}`,
+                        scrub:true,
+                    },
+                    duration: 2,
+                    x:-((itemsec4.length - 2) * 350),
+                });
+            }
+        }
+    });
 });

@@ -431,11 +431,14 @@ main{
 
 .sec4{
     padding: 50px 0;
+    height: 100dvh;
     color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .sec4 > h1{
-    margin-top: 50px;
     font-size: 60px;
 }
 
@@ -479,6 +482,7 @@ main{
     height: 200px;
     perspective: 500px;
     margin: 100px;
+    filter: drop-shadow(0 0 50px #ffffff96);
 }
 
 .cube {
@@ -500,7 +504,7 @@ main{
 .face {
   width: 200px;
   height: 200px;
-  border: 1px solid black;
+  
   position: absolute;
   display: flex;
   align-items: center;

@@ -212,7 +212,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
             trigger:sec4,
             start:"top top",
             end:() => `+=${(itemsec4.length - 2) * 350}`,
-            markers:true,
             pin:true,
             onEnter:() => {
                 gsap.to(containersec4,{

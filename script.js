@@ -219,24 +219,24 @@ document.addEventListener("DOMContentLoaded", (event) => {
     });
 
     //scroll projecs
-    gsap.to(sec4,{
-        scrollTrigger:{
-            trigger:sec4,
-            start:"top top",
-            end:() => `+=${(itemsec4.length - 2) * 350}`,
-            pin:true,
-            onEnter:() => {
-                gsap.to(containersec4,{
-                    scrollTrigger:{
-                        trigger:containersec4,
-                        start:"top top",
-                        end:() => `+=${(itemsec4.length - 2) * 350}`,
-                        scrub:true,
-                    },
-                    duration: 2,
-                    x:-((itemsec4.length - 2) * 350),
-                });
-            }
-        }
-    });
+    // gsap.to(sec4,{
+    //     scrollTrigger:{
+    //         trigger:sec4,
+    //         start:"top top",
+    //         end:() => `+=${(itemsec4.length - 2) * 350}`,
+    //         pin:true,
+    //         onEnter:() => {
+    //             gsap.to(containersec4,{
+    //                 scrollTrigger:{
+    //                     trigger:containersec4,
+    //                     start:"top top",
+    //                     end:() => `+=${(itemsec4.length - 2) * 350}`,
+    //                     scrub:true,
+    //                 },
+    //                 duration: 2,
+    //                 x:-((itemsec4.length - 2) * 350),
+    //             });
+    //         }
+    //     }
+    // });
 });

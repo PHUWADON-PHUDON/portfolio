@@ -476,8 +476,10 @@ main{
 }
 
 .sec4 .container .boxright .item{
+    position: absolute;
+    left: calc(var(--i) * 370px);
     flex-shrink: 0;
-    background-color: red;
+    background-color: rgb(255, 25, 0);
     width: 350px;
     height: 450px;
 }

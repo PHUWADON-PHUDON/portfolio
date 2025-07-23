@@ -479,7 +479,7 @@ main{
     position: absolute;
     left: calc(var(--i) * 370px);
     flex-shrink: 0;
-    background-color: rgb(255, 25, 0);
+    background-color: rgb(229, 255, 0);
     width: 350px;
     height: 450px;
 }

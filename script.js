@@ -22,6 +22,10 @@ const boxproject = document.querySelector(".boxproject");
 const cube = document.querySelector(".containercube");
 const containersec4 = document.querySelector(".sec4 .container");
 const itemsec4 = document.querySelectorAll(".sec4 .item");
+const clickhome = document.querySelector(".home");
+const clickskills = document.querySelector(".skills");
+const clickprojects = document.querySelector(".projects");
+const clickcontact = document.querySelector(".contact");
 
 let checkrotatemenu = 0;
 
@@ -139,7 +143,7 @@ window.addEventListener("scroll",() => {
 
 //gsap animation
 document.addEventListener("DOMContentLoaded", (event) => {
-    gsap.registerPlugin(ScrollTrigger,ScrollSmoother,ScrambleTextPlugin);
+    gsap.registerPlugin(ScrollTrigger,ScrollSmoother,ScrambleTextPlugin,ScrollToPlugin);
 
     //cursor animantion
     gsap.set(".cursor", {xPercent: -50, yPercent: -50});
@@ -157,6 +161,32 @@ document.addEventListener("DOMContentLoaded", (event) => {
         wrapper:smoothwrapper,
         content:smoothcontent,
         smooth:1
+    });
+
+    //book mark
+    clickhome.addEventListener("click",() => {
+        gsap.to(window,{
+            duration: 0,
+            scrollTo: "#home",
+        });
+    });
+    clickskills.addEventListener("click",() => {
+        gsap.to(window,{
+            duration: 0,
+            scrollTo: "#skills",
+        });
+    });
+    clickprojects.addEventListener("click",() => {
+        gsap.to(window,{
+            duration: 0,
+            scrollTo: "#projects",
+        });
+    });
+    clickcontact.addEventListener("click",() => {
+        gsap.to(window,{
+            duration: 0,
+            scrollTo: "#contact",
+        });
     });
 
     //scrambleText phuwadon
@@ -223,19 +253,18 @@ document.addEventListener("DOMContentLoaded", (event) => {
         scrollTrigger:{
             trigger:sec4,
             start:"top top",
-            markers:true,
-            end:() => `+=${(itemsec4.length - 1) * 350}`,
+            end:() => `+=${(itemsec4.length - 2) * 350}`,
             pin:true,
             onEnter:() => {
                 gsap.to(itemsec4,{
                     scrollTrigger:{
                         trigger:itemsec4,
                         start:"top top",
-                        end:() => `+=${(itemsec4.length - 1) * 350}`,
+                        end:() => `+=${(itemsec4.length - 2) * 350}`,
                         scrub:true,
                     },
                     
-                    x:-((itemsec4.length - 1) * 350),
+                    x:-((itemsec4.length - 2) * 350),
                 });
             }
         }

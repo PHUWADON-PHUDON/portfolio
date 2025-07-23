@@ -9,6 +9,7 @@
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
+    list-style: none;
     font-variation-settings:
       "slnt" 0,
       "CRSV" 0.5,
@@ -459,7 +460,6 @@ main{
 
 .sec4 .container{
     margin-top: 20px;
-    border: 1px solid red;
     width: calc(100dvw - 50px);
     height: 450px;
     overflow: hidden;
@@ -600,7 +600,7 @@ main{
     }
 
     .sec2 .boxtext > h1 > span{
-        line-height: 5rem;
+        line-height: 4rem;
     }
 
     .sec3{
@@ -637,7 +637,46 @@ main{
         justify-content: center;
         align-items: center;
     }
+
+    .sec3 .boxtools > div{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .sec3 .boxlbfw > div{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .sec3 .boxdb > div > div{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
     .sec3 p{
+        text-align: center;
+    }
+
+    .sec3 h1{
+        text-align: center;
+    }
+
+    
+}
+
+/* responsive sec4 */
+
+@media screen and (max-width: 617px) {
+    .sec4 > h1{
         text-align: center;
     }
 }

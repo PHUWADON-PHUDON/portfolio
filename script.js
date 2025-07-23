@@ -283,8 +283,12 @@ document.addEventListener("DOMContentLoaded", (event) => {
                 }
             }
         });
+
+        title.innerHTML = "pc"
     } 
     else {
         //ผู้ใช้ใช้ mobile หรือ ipad
+
+        title.innerHTML = "mobile,ipad"
     }
 });

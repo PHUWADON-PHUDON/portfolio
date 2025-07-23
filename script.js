@@ -153,7 +153,13 @@ document.addEventListener("DOMContentLoaded", (event) => {
         smooth:1
     });
 
-    if (/Windows|Macintosh|Linux/.test(ua)) {
+    if (/android/i.test(ua)) {
+        title.innerHTML = "android"
+    } 
+    else if (/iPad|iPhone|iPod/.test(ua) && !window.MSStream) {
+      title.innerHTML = "iPad"
+    } 
+    else if (/Windows|Macintosh|Linux/.test(ua)) {
         //cursor animantion
         title.innerHTML = "pc"
         gsap.to(".cursor",{
@@ -285,9 +291,4 @@ document.addEventListener("DOMContentLoaded", (event) => {
             }
         });
     } 
-    else {
-        //ผู้ใช้ใช้ mobile หรือ ipad
-
-        title.innerHTML = "mobile,ipad"
-    }
 });

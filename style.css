@@ -41,7 +41,6 @@ body{
     display: flex;
     flex-direction: column;
     overflow-x: hidden;
-    border: 1px solid yellow;
 }
 
 .loadbar{
@@ -457,20 +456,21 @@ main{
 
 .sec4 > h1{
     font-size: 60px;
-    
 }
 
 .sec4 .container{
     position: relative;
     margin-top: 20px;
     border: 1px solid red;
+    width: 100dvw;
     height: 450px;
+    overflow: hidden;
 }
 
 .sec4 .container .item{
     position: absolute;
     transform: translateX(calc(var(--i) * 370px));
-    background-color: rgb(255, 42, 0);
+    background-color: rgb(204, 255, 0);
     width: 350px;
     height: 450px;
 }

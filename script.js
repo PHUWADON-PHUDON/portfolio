@@ -155,6 +155,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
     if (/Windows|Macintosh|Linux/.test(ua)) {
         //cursor animantion
+        title.innerHTML = "pc"
         gsap.to(".cursor",{
             duration: 0,
             width:50,
@@ -204,10 +205,10 @@ document.addEventListener("DOMContentLoaded", (event) => {
         });
 
         //scrambleText phuwadon
-        gsap.to(title,{
-            duration: 4,
-            scrambleText: "Phuwadon"
-        });
+        // gsap.to(title,{
+        //     duration: 4,
+        //     scrambleText: "Phuwadon"
+        // });
 
         //script loadbar
         gsap.ticker.add(() => {
@@ -283,8 +284,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
                 }
             }
         });
-
-        title.innerHTML = "pc"
     } 
     else {
         //ผู้ใช้ใช้ mobile หรือ ipad

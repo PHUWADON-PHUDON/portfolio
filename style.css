@@ -41,6 +41,7 @@ body{
     display: flex;
     flex-direction: column;
     overflow-x: hidden;
+    border: 1px solid yellow;
 }
 
 .loadbar{

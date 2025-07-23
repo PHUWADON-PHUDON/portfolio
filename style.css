@@ -458,17 +458,17 @@ main{
 }
 
 .sec4 .container{
-    position: relative;
     margin-top: 20px;
     border: 1px solid red;
     width: calc(100dvw - 50px);
     height: 450px;
     overflow: hidden;
+    display: flex;
+    gap: 20px;
 }
 
 .sec4 .container .item{
-    position: absolute;
-    transform: translateX(calc(var(--i) * 370px));
+    flex-shrink: 0;
     background-color: rgb(242, 0, 255);
     width: 350px;
     height: 450px;

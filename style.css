@@ -451,7 +451,6 @@ main{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    border: 1px solid rgb(233, 9, 9);
 }
 
 .sec4 > h1{
@@ -470,7 +469,7 @@ main{
 .sec4 .container .item{
     position: absolute;
     transform: translateX(calc(var(--i) * 370px));
-    background-color: rgb(0, 255, 17);
+    background-color: rgb(242, 0, 255);
     width: 350px;
     height: 450px;
 }

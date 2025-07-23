@@ -451,6 +451,7 @@ main{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    border: 1px solid rgb(233, 9, 9);
 }
 
 .sec4 > h1{
@@ -459,23 +460,14 @@ main{
 }
 
 .sec4 .container{
-    margin-top: 20px;
-    display: flex;
-}
-
-.sec4 .container .boxleft{
-    width: 40%;
-}
-
-.sec4 .container .boxright{
     position: relative;
-    width: 60%;
-    display: flex;
-    gap: 20px;
-    border: 1px solid yellow;
+    margin-top: 20px;
+    border: 1px solid red;
+    height: 450px;
+    overflow: hidden;
 }
 
-.sec4 .container .boxright .item{
+.sec4 .container .item{
     position: absolute;
     left: calc(var(--i) * 370px);
     flex-shrink: 0;

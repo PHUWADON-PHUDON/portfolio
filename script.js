@@ -224,18 +224,18 @@ document.addEventListener("DOMContentLoaded", (event) => {
             trigger:sec4,
             start:"top top",
             markers:true,
-            end:() => `+=${(itemsec4.length - 3) * 350}`,
+            end:() => `+=${(itemsec4.length - 1) * 350}`,
             pin:true,
             onEnter:() => {
                 gsap.to(itemsec4,{
                     scrollTrigger:{
                         trigger:itemsec4,
                         start:"top top",
-                        end:() => `+=${(itemsec4.length - 3) * 350}`,
+                        end:() => `+=${(itemsec4.length - 1) * 350}`,
                         scrub:true,
                     },
                     
-                    x:-((itemsec4.length - 3) * 350),
+                    x:-((itemsec4.length - 1) * 350),
                 });
             }
         }

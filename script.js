@@ -149,12 +149,16 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
     if (/android/i.test(ua)) {
       console.log("📱 ผู้ใช้ใช้ Android");
+      title.innerHTML = "📱 ผู้ใช้ใช้ Android"
     } else if (/iPad|iPhone|iPod/.test(ua) && !window.MSStream) {
       console.log("📱 ผู้ใช้ใช้ iOS");
+      title.innerHTML = "📱 ผู้ใช้ใช้ iOS"
     } else if (/Windows|Macintosh|Linux/.test(ua)) {
       console.log("🖥️ ผู้ใช้ใช้ PC หรือ Laptop");
+      title.innerHTML ="🖥️ ผู้ใช้ใช้ PC หรือ Laptop"
     } else {
       console.log("ไม่สามารถระบุแพลตฟอร์มได้");
+      title.innerHTML = "ไม่สามารถระบุแพลตฟอร์มได้"
     }
 
     //cursor animantion
@@ -202,10 +206,10 @@ document.addEventListener("DOMContentLoaded", (event) => {
     });
 
     //scrambleText phuwadon
-    gsap.to(title,{
-        duration: 4,
-        scrambleText: "Phuwadon"
-    });
+    // gsap.to(title,{
+    //     duration: 4,
+    //     scrambleText: "Phuwadon"
+    // });
 
     //script loadbar
     gsap.ticker.add(() => {

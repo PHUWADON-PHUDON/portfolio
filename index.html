@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Portfolio </title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="stylepc.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
@@ -48,13 +49,13 @@
                         <h2><span class="writetext"></span><span></span></h2>
                     </div>
                     <div class="boxicon">
-                        <i class="fa-regular fa-envelope"></i>
-                        <i class="fa-brands fa-linkedin-in"></i>
-                        <i class="fa-brands fa-github"></i>
-                        <i class="fa-brands fa-instagram"></i>
+                        <a target="_blank" href="https://www.linkedin.com/in/phuwadon-suwannarat-220090374/"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a target="_blank" href="https://github.com/PHUWADON-PHUDON"><i class="fa-brands fa-github"></i></a>
+                        <a target="_blank" href="https://www.instagram.com/phudon_?igsh=YXl3MW01YnRqdmlu"><i class="fa-brands fa-instagram"></i></a>
+                        <a target="_blank" href="https://www.facebook.com/share/19CgAWsyZP/"><i class="fa-brands fa-facebook"></i></a>
                     </div>
                     <div class="boxlink">
-                        <a href="#">Let's Talk</a>
+                        <a class="lettalk">Let's Talk</a>
                     </div>
                 </div>
                 <div class="boxright">
@@ -73,7 +74,7 @@
             <section class="sec2">
                 <div class="boxtext">
                     <h1>
-                        <span>I'm a passionate Engineer who's focused on building scalable and performant apps.</span>
+                        <span>I'm a passionate Web Developer who's focused on building scalable and performant apps.</span>
                         <span>I take responsibility to craft a good user experience using modern frontend architecture.</span>
                     </h1>
                 </div>
@@ -125,16 +126,102 @@
                 <h1 class="myprojects"></h1>
 
                 <div class="container">
-                    <div class="item"></div>
-                    <div class="item" style="--i:1"></div>
-                    <div class="item" style="--i:2"></div>
-                    <div class="item" style="--i:3"></div>
-                    <div class="item" style="--i:4"></div>
-                    <div class="item" style="--i:5"></div>
+                    <a target="_blank" href="https://nithan.vercel.app/" class="item">
+                        <div class="effect"></div>
+                        <div class="content">
+                            <img src="image/nithan.png" alt="">
+                            <div>
+                                <p>A full-stack web application for reading and managing children's storybooks. The platform allows users to register, log in, and browse available stories, while administrators can create, update, and delete story content through a dedicated management interface.</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a target="_blank" href="https://github.com/PHUWADON-PHUDON/13.8_web" class="item">
+                        <div class="effect"></div>
+                        <div class="content">
+                            <img src="image/thirteen.png" alt="">
+                            <div>
+                                <p>A responsive web application that provides users with the latest news and articles about astronomy, stars, and space exploration. The platform includes an admin dashboard that allows administrators to manage content, including creating, editing, and deleting news articles.</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a target="_blank" href="https://github.com/PHUWADON-PHUDON/happy_house_shop_frontend" class="item">
+                        <div class="effect"></div>
+                        <div class="content">
+                            <img src="image/pos.png" alt="">
+                            <div>
+                                <p>A web-based Point of Sale (POS) system designed for small retail shops. The application allows store owners to manage products, categories, and view sales performance through interactive charts and dashboards.</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a target="_blank" href="https://friend-pays.vercel.app/" class="item">
+                        <div class="effect"></div>
+                        <div class="content">
+                            <img src="image/promptpay.png" alt="">
+                            <div>
+                                <p>A web application that generates PromptPay QR codes based on phone number and amount input. Supports instant payment via scanning.</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a target="_blank" href="https://hangmanphudon.netlify.app/" class="item">
+                        <div class="effect"></div>
+                        <div class="content">
+                            <img src="image/hangman.png" alt="">
+                            <div>
+                                <p>Game built with JavaScript and React. Players try to guess the hidden word by selecting letters within a limited number of attempts.</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a target="_blank" href="https://phuwadon-phudon.github.io/capybara/" class="item">
+                        <div class="effect"></div>
+                        <div class="content">
+                            <img src="image/capybara.png" alt="">
+                            <div>
+                                <p>A simple interactive game where users gain points by clicking an object. Built with JavaScript.</p>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="item seemore">
+                        <a target="_blank" href="https://github.com/PHUWADON-PHUDON" class="seemoretext"><h1 >SEE MORE</h1></a>
+                    </div>
                 </div>
             </section>
             <section id="contact" class="sec5">
-                sec5
+                <h1 class="contactwithme"></h1>
+                <div class="container">
+                    <div class="boxleft">
+                        <form action="https://formsubmit.co/ppuwdon@gmail.com" method="POST">
+                            <p>if you have any questions or concerns, please don't hesitate to contact me. i am open to any work opportunities that align with my skills and interests.</p>
+                            <p>Your Name:</p>
+                            <input type="text" name="name" placeholder="Your Name" required>
+                            <p>Your Email:</p>
+                            <input type="email" name="email" placeholder="Your Email" required>
+                            <p>Your Message:</p>
+                            <textarea name="message" placeholder="Your Message" required></textarea>
+                            <button type="submit">Send Message <i class="fa-solid fa-envelope"></i></button>
+                        </form>
+                    </div>
+                    <div class="boxright">
+                        <div>
+                            <div>
+                                <i class="fa-solid fa-at"></i>
+                                <p>ppuwdon@gmail.com</p>
+                            </div>
+                            <div>
+                                <i class="fa-solid fa-phone"></i>
+                                <p>0926437604</p>
+                            </div>
+                            <div>
+                                <i class="fa-solid fa-location-dot"></i>
+                                <p>Thailand</p>
+                            </div>
+                            <div style="margin-top: 20px;">
+                                <a target="_blank" href="https://www.linkedin.com/in/phuwadon-suwannarat-220090374/"><i class="fa-brands fa-linkedin-in"></i></a>
+                                <a target="_blank" href="https://www.instagram.com/phudon_?igsh=YXl3MW01YnRqdmlu"><i class="fa-brands fa-instagram"></i></a>
+                                <a target="_blank" href="https://www.facebook.com/share/19CgAWsyZP/"><i class="fa-brands fa-facebook-f"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </section>
         </div>
         <!-- <section class="sec5"></section> -->

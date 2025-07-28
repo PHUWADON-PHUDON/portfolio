@@ -26,6 +26,8 @@ const clickhome = document.querySelector(".home");
 const clickskills = document.querySelector(".skills");
 const clickprojects = document.querySelector(".projects");
 const clickcontact = document.querySelector(".contact");
+const lettalk = document.querySelector(".lettalk");
+const cardeffect = document.querySelectorAll(".sec4 .item .effect");
 
 let checkrotatemenu = 0;
 
@@ -144,7 +146,17 @@ window.addEventListener("scroll",() => {
 //gsap animation
 document.addEventListener("DOMContentLoaded", (event) => {
     gsap.registerPlugin(ScrollTrigger,ScrollSmoother,ScrambleTextPlugin,ScrollToPlugin);
-    const ua = navigator.userAgent;
+
+    //cursor animantion
+    gsap.set(".cursor", {xPercent: -50, yPercent: -50});
+
+    let xTo = gsap.quickTo(".cursor", "x", {duration: 0.6, ease: "power3"}),
+        yTo = gsap.quickTo(".cursor", "y", {duration: 0.6, ease: "power3"});
+
+    window.addEventListener("mousemove", e => {
+      xTo(e.clientX);
+      yTo(e.clientY);
+    });
 
     //smooth scroll
     let smoother = ScrollSmoother.create({
@@ -153,123 +165,99 @@ document.addEventListener("DOMContentLoaded", (event) => {
         smooth:1
     });
 
-    if (/android/i.test(ua)) {
-        title.innerHTML = "android"
-    } 
-    else if (/iPad|iPhone|iPod/.test(ua) && !window.MSStream) {
-      title.innerHTML = "iPad"
-    } 
-    else if (/Windows|Macintosh|Linux/.test(ua)) {
-        //cursor animantion
-        title.innerHTML = "pc"
-        gsap.to(".cursor",{
+    //book mark
+    clickhome.addEventListener("click",() => {
+        gsap.to(window,{
             duration: 0,
-            width:50,
-            height:50,
-            zIndex:100,
-            position:"fixed",
-            top:0,
-            left:0,
-            border:"1px solid #fff",
-            borderRadius:50,
-            pointerEvents:"none"
+            scrollTo: "#home",
         });
-        gsap.set(".cursor", {xPercent: -50, yPercent: -50});
-
-        let xTo = gsap.quickTo(".cursor", "x", {duration: 0.6, ease: "power3"}),
-            yTo = gsap.quickTo(".cursor", "y", {duration: 0.6, ease: "power3"});
-
-        window.addEventListener("mousemove", e => {
-          xTo(e.clientX);
-          yTo(e.clientY);
+    });
+    clickskills.addEventListener("click",() => {
+        gsap.to(window,{
+            duration: 0,
+            scrollTo: "#skills",
         });
-
-        //book mark
-        clickhome.addEventListener("click",() => {
-            gsap.to(window,{
-                duration: 0,
-                scrollTo: "#home",
-            });
+    });
+    clickprojects.addEventListener("click",() => {
+        gsap.to(window,{
+            duration: 0,
+            scrollTo: "#projects",
         });
-        clickskills.addEventListener("click",() => {
-            gsap.to(window,{
-                duration: 0,
-                scrollTo: "#skills",
-            });
+    });
+    clickcontact.addEventListener("click",() => {
+        gsap.to(window,{
+            duration: 0,
+            scrollTo: "#contact",
         });
-        clickprojects.addEventListener("click",() => {
-            gsap.to(window,{
-                duration: 0,
-                scrollTo: "#projects",
-            });
+    });
+    lettalk.addEventListener("click",() => {
+        gsap.to(window,{
+            duration: 0,
+            scrollTo: "#contact",
         });
-        clickcontact.addEventListener("click",() => {
-            gsap.to(window,{
-                duration: 0,
-                scrollTo: "#contact",
-            });
-        });
+    });
 
-        //scrambleText phuwadon
-        // gsap.to(title,{
-        //     duration: 4,
-        //     scrambleText: "Phuwadon"
-        // });
+    //scrambleText phuwadon
+    gsap.to(title,{
+        duration: 4,
+        scrambleText: "Phuwadon"
+    });
 
-        //script loadbar
-        gsap.ticker.add(() => {
-            const scrollY = smoother.scrollTop();
-            const contentHeight = smoother.content().scrollHeight;
-            const viewportHeight = window.innerHeight;
-            const maxScroll = contentHeight - viewportHeight;
-            const progress = (scrollY / maxScroll) * 100;
+    //script loadbar
+    gsap.ticker.add(() => {
+        const scrollY = smoother.scrollTop();
+        const contentHeight = smoother.content().scrollHeight;
+        const viewportHeight = window.innerHeight;
+        const maxScroll = contentHeight - viewportHeight;
+        const progress = (scrollY / maxScroll) * 100;
+        
+        loadbar.style = `width: ${progress}%;`;
+    });
 
-            loadbar.style = `width: ${progress}%;`;
-        });
+    //rotation cube
+    gsap.to(cube,{
+        scrollTrigger:{
+            trigger:cube,
+            start:"top center",
+            scrub:true,
+        },
+        rotation:360
+    });
 
-        //rotation cube
-        gsap.to(cube,{
-            scrollTrigger:{
-                trigger:cube,
-                start:"top center",
-                scrub:true,
-            },
-            rotation:360
-        });
-
-        //scrambleText my skills
-        gsap.to(myskills,{
-            scrollTrigger:{
-                trigger:myskills,
-                start:"top bottom",
-                onEnter: () => {
-                    gsap.to(myskills, {
-                      scrambleText: {
-                        text: "My Skills"
-                      },
-                      duration: 2
-                    });
-                }
+    //scrambleText my skills
+    gsap.to(myskills,{
+        scrollTrigger:{
+            trigger:myskills,
+            start:"top bottom",
+            onEnter: () => {
+                gsap.to(myskills, {
+                  scrambleText: {
+                    text: "My Skills"
+                  },
+                  duration: 2
+                });
             }
-        });
+        }
+    });
 
-        //scrambleText my projects
-        gsap.to(myprojects,{
-            scrollTrigger:{
-                trigger:myprojects,
-                start:"top bottom",
-                onEnter: () => {
-                    gsap.to(myprojects, {
-                      scrambleText: {
-                        text: "My Projects"
-                      },
-                      duration: 2
-                    });
-                }
+    //scrambleText my projects
+    gsap.to(myprojects,{
+        scrollTrigger:{
+            trigger:myprojects,
+            start:"top bottom",
+            onEnter: () => {
+                gsap.to(myprojects, {
+                  scrambleText: {
+                    text: "My Projects"
+                  },
+                  duration: 2
+                });
             }
-        });
+        }
+    });
 
-        //scroll projecs
+    //scroll projecs
+    if (window.innerWidth >= 835) {
         gsap.to(sec4,{
             scrollTrigger:{
                 trigger:sec4,
@@ -290,5 +278,52 @@ document.addEventListener("DOMContentLoaded", (event) => {
                 }
             }
         });
-    } 
+    }
+
+    //card effect
+    itemsec4.forEach((el,i) => {
+        el.addEventListener("mousemove", e => {
+            console.log(i)
+            const rect = itemsec4[i].getBoundingClientRect();
+
+            gsap.to(cardeffect[i],{
+                duration: 2,
+                ease: "power3",
+                xPercent: -50,
+                yPercent: -50,
+                x:e.clientX - rect.left,
+                y:e.clientY - rect.top,
+            })
+        });
+    });
+
+    //seemore fade
+    if (window.innerWidth >= 835) {
+        gsap.to(".seemoretext",{
+            scrollTrigger:{
+                trigger:".seemoretext",
+                start:"+=800 +=10",
+                end:"+=500",
+                scrub:true,
+            },
+            width:300,
+            filter:"hue-rotate(360deg)"
+        });
+    }
+
+    //scrambleText contact with me
+    gsap.to(".contactwithme",{
+        scrollTrigger:{
+            trigger:".contactwithme",
+            start:"top bottom",
+            onEnter: () => {
+                gsap.to(".contactwithme", {
+                  scrambleText: {
+                    text: "Contact"
+                  },
+                  duration: 2
+                });
+            }
+        }
+    });
 });

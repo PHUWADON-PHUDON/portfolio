@@ -10,6 +10,7 @@
     font-weight: 400;
     font-style: normal;
     list-style: none;
+    text-decoration: none;
     font-variation-settings:
       "slnt" 0,
       "CRSV" 0.5,
@@ -164,6 +165,7 @@ body{
 
 .menu > ul > li >a{
     display: block;
+    cursor: pointer;
     background-image: linear-gradient(90deg,#fff 50%,#f7e025 50%);
     width: 100%;
     background-size: 200%;
@@ -289,11 +291,16 @@ main{
     column-gap: 30px;
 }
 
-.sec1 .boxleft .boxicon > i{
+.sec1 .boxleft .boxicon > a{
+    display: block;
+    color: #fff;
+}
+
+.sec1 .boxleft .boxicon > a > i{
     transition: color .5s;
 }
 
-.sec1 .boxleft .boxicon > i:hover{
+.sec1 .boxleft .boxicon > a > i:hover{
     color: #f7e025;
 }
 
@@ -302,6 +309,7 @@ main{
 }
 
 .sec1 .boxleft .boxlink > a{
+    cursor: pointer;
     display: inline-block;
     color: #fff;
     text-decoration: none;
@@ -468,16 +476,191 @@ main{
 }
 
 .sec4 .container .item{
+    position: relative;
     flex-shrink: 0;
-    background-color: rgb(255, 0, 0);
+    background-color: rgba(146, 146, 146, 0.181);
     width: 350px;
     height: 450px;
+    overflow: hidden;
+}
+
+.sec4 .container .item .effect{
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+    background-color: #b700ff10;
+    box-shadow: 0 0 200px #b700ff3b;
+}
+
+.sec4 .container .item .content{
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(20px);
+    padding: 10px;
+
+}
+
+.sec4 .container .item .content > img{
+    display: block;
+    width: 100%;
+    height: 50%;
+    margin: 0 auto;
+    object-fit: cover;
+}
+
+.sec4 .container .item .content > div{
+    margin-top: 10px;
+    font-size: 16px;
+    color: #fff;
+}
+
+.sec4 .container .seemore{
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    font-size: 40px;
+}
+
+.sec4 .container .seemore > a{
+    width: 0;
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    background-image: linear-gradient(45deg, #9C4F96,#FF6355,#FBA949,#FAE442,#8BD448,#2AA8F2);
+    white-space: nowrap;
+    overflow: hidden;
+    font-weight: bold;
 }
 
 .sec5{
-    height: 100dvh;
-    padding: 50px 0;
+    margin-top: 100px;
     color: #fff;
+    padding-bottom: 100px;
+}
+
+.sec5 > h1{
+    text-align: center;
+    font-size: 60px;
+}
+
+.sec5 .container{
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.sec5 .container .boxleft{
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.sec5 .container .boxleft > form{
+    border: 2px solid rgba(128, 128, 128, 0.222);
+    width: 400px;
+    padding: 10px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+}
+
+.sec5 .container .boxleft > form > p{
+    margin-top: 15px;
+}
+
+.sec5 .container .boxleft > form > input:focus{
+    outline: none;
+}
+
+.sec5 .container .boxleft > form > input{
+    margin-top: 10px;
+    height: 30px;
+    padding: 5px;
+    border-radius: 4px;
+    border: 2px solid rgba(128, 128, 128, 0.222);
+    background-color: transparent;
+    color: #fff;
+}
+
+.sec5 .container .boxleft > form > textarea:focus{
+    outline: none;
+}
+
+.sec5 .container .boxleft > form > textarea{
+    margin-top: 10px;
+    padding: 5px;
+    resize: vertical;
+    height: 50px;
+    border: 2px solid rgba(128, 128, 128, 0.222);
+    background-color: transparent;
+    color: #fff;
+}
+
+.sec5 .container .boxleft > form > button{
+    margin: 20px auto 0 auto;
+    cursor: pointer;
+    width: 150px;
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    color: #fff;
+    text-shadow: 0 0 10px #000;
+    background-image: linear-gradient(-45deg, #9C4F96,#FF6355,#FBA949,#FAE442,#8BD448,#2AA8F2);
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.sec5 .container .boxleft > form > button:hover{
+    animation: fadebtncolor 10s linear infinite forwards;
+}
+
+@keyframes fadebtncolor{
+    0%{
+        filter: hue-rotate(0deg);
+    }
+    50%{
+        filter: hue-rotate(360deg);
+    }
+    100%{
+        filter: hue-rotate(0deg);
+    }
+}
+
+.sec5 .container .boxright{
+    width: 50%;
+}
+
+.sec5 .container .boxright{
+    display: flex;
+    align-items: center;
+}
+
+.sec5 .container .boxright > div > div{
+    margin-top: 10px;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.sec5 .container .boxright > div > div > i , .sec5 .container .boxright > div > div > a > i{
+    background-color: rgba(128, 128, 128, 0.222);
+    color: #fff;
+    width: 35px;
+    height: 35px;
+    border-radius: 100%;
+    display: grid;
+    place-items: center;
+    transition: all .2s;
+    cursor: pointer;
+}
+
+.sec5 .container .boxright > div > div:last-child > a > i:hover{
+    color: #f7e025;
 }
 
 

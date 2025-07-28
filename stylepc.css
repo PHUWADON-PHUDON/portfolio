@@ -1,0 +1,63 @@
+/* responsive pc */
+@media screen and (max-width: 835px) {
+    .sec4{
+        height: auto;
+    }
+
+    .sec4 > h1{
+        text-align: center;
+    }
+
+    .sec4 .container{
+        width: auto;
+        height: auto;
+        overflow: visible;
+        justify-content: center;
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
+
+    .sec4 .container .item:last-child{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .sec5{
+        padding-bottom: 50px;
+    }
+
+    .sec5 > h1{
+        text-align: center;
+        font-size: 60px;
+    }
+
+    .sec5 .container{
+        margin-top: 30px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .sec5 .container .boxleft{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .sec5 .container .boxright{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .sec5 .container .boxright > div > div:last-child{
+        display: flex;
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .sec4 .container .item{
+        width: 300px;
+    }
+}

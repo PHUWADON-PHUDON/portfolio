@@ -24,7 +24,9 @@
 
 @media screen and (max-width: 700px) {
     .sec5{
-        padding-bottom: 50px;
+        padding: 50px 0;
+        height: auto;
+        display: block;
     }
 
     .sec5 > h1{

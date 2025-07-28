@@ -534,9 +534,11 @@ main{
 }
 
 .sec5{
-    margin-top: 100px;
     color: #fff;
-    padding-bottom: 100px;
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .sec5 > h1{

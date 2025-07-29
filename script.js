@@ -198,10 +198,10 @@ document.addEventListener("DOMContentLoaded", (event) => {
     });
 
     //scrambleText phuwadon
-    gsap.to(title,{
-        duration: 4,
-        scrambleText: "Phuwadon"
-    });
+    // gsap.to(title,{
+    //     duration: 4,
+    //     scrambleText: "Phuwadon"
+    // });
 
     //script loadbar
     gsap.ticker.add(() => {
@@ -326,4 +326,14 @@ document.addEventListener("DOMContentLoaded", (event) => {
             }
         }
     });
+
+    const ua = navigator.userAgent;
+
+    if (/android/i.test(ua) || /iPad|iPhone|iPod/.test(ua) && !window.MSStream) {
+      console.log("📱 ผู้ใช้ใช้ Android");
+      console.log("📱 ผู้ใช้ใช้ iOS");
+      title.innerHTML = "android and ios"
+    } else {
+      title.innerHTML = "pc"
+    }
 });

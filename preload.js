@@ -1,12 +1,15 @@
 const ua = navigator.userAgent;
+const h1 = document.querySelector("h1");
 
 if (/android/i.test(ua) || /iPad|iPhone|iPod/.test(ua) && !window.MSStream) {
     setTimeout(() => {
-
+        h1.innerHTML = "phone"
     },800);
+    console.log(1)
 }
 else {
     setTimeout(() => {
-        window.location.href = "index.html";
+        h1.innerHTML = "pc"
     },800);
+    console.log(2)
 }

@@ -164,7 +164,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     setTimeout(() => {
         gsap.to(".preload",{
             duration: 0.5,
-            transform:"translateY(-100dvh)"
+            transform:"translateY(-150dvh)"
         });
 
         //scrambleText phuwadon
@@ -172,6 +172,13 @@ document.addEventListener("DOMContentLoaded", (event) => {
             duration: 4,
             scrambleText: "Phuwadon"
         });
+
+        setTimeout(() => {
+            gsap.to(".preload",{
+                duration: 0,
+                display:"none"
+            });
+        },200);
 
         document.body.style.overflow = "auto";
     },10000);

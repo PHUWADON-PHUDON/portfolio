@@ -9,7 +9,7 @@ if (/android/i.test(ua) || /iPad|iPhone|iPod/.test(ua) && !window.MSStream) {
 }
 else {
     setTimeout(() => {
-        h1.innerHTML = "pc"
+        h1.innerHTML = "pc laptop"
     },800);
     console.log(2)
 }

@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitcount+Grid+Single:wght@100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Bitcount Grid Single", system-ui;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    list-style: none;
+    text-decoration: none;
+    font-variation-settings:
+      "slnt" 0,
+      "CRSV" 0.5,
+      "ELSH" 0,
+      "ELXP" 0;
+}
+
+::selection{
+    color: #fff;
+    background-color: #f7e025;
+}
+
+body{
+    position: relative;
+    background-color: #120e16;
+    height: 100dvh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body > h1{
+    color: #ffffff26;
+    font-size: 15dvw;
+}
+
+.loadui{
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    width: 50px;
+    height: 50px;
+    border: 5px solid #fff;
+    border-bottom: 5px solid transparent;
+    border-radius: 100%;
+    animation: aniloaduiout 5s linear infinite;
+    display: grid;
+    place-items: center;
+}
+
+.loadui > div{
+    width: 30px;
+    height: 30px;
+    border: 5px solid #fff;
+    border-bottom: 5px solid transparent;
+    border-radius: 100%;
+    animation: aniloaduiin 2s linear infinite;
+}
+
+@keyframes aniloaduiout {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes aniloaduiin {
+    0%{
+        transform: rotate(-0deg);
+    }
+    100%{
+        transform: rotate(-360deg);
+    }
+}

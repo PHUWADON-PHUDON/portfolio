@@ -5,11 +5,9 @@ if (/android/i.test(ua) || /iPad|iPhone|iPod/.test(ua) && !window.MSStream) {
     setTimeout(() => {
         h1.innerHTML = "phone"
     },800);
-    console.log(1)
 }
 else {
     setTimeout(() => {
-        h1.innerHTML = "pc laptop"
+        window.location.href = "pc.html"
     },800);
-    console.log(2)
 }

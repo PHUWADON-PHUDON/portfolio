@@ -754,11 +754,13 @@ main{
     position: relative;
     background-color: #ffffff26;
     background-clip: text;
+    -webkit-background-clip: text;
 }
 
 .preload .boxtitle > div{
     width: 0%;
     background-clip: text;
+    -webkit-background-clip: text;
     background-image: linear-gradient(-45deg, #9C4F96,#FF6355,#FBA949,#FAE442,#8BD448,#2AA8F2);
 }
 
